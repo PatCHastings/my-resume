@@ -7,10 +7,18 @@ interface TopBarProps {
 const TopBar: React.FC<TopBarProps> = ({ onSelectSection }) => {
   return (
     <div className="top-menu-bar">
-      <button onClick={() => onSelectSection("header")}>Header</button>
-      <button onClick={() => onSelectSection("aboutMe")}>About Me</button>
-      <button onClick={() => onSelectSection("experience")}>Experience</button>
-      <button onClick={() => onSelectSection("projects")}>Projects</button>
+      <button className="button" onClick={() => onSelectSection("header")}>
+        Header
+      </button>
+      <button className="button" onClick={() => onSelectSection("aboutMe")}>
+        About Me
+      </button>
+      <button className="button" onClick={() => onSelectSection("experience")}>
+        Experience
+      </button>
+      <button className="button" onClick={() => onSelectSection("projects")}>
+        Projects
+      </button>
       {/* Add more sections as needed */}
     </div>
   );

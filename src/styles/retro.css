@@ -6,17 +6,31 @@
 }
 
 body {
-  font-family: 'MS Sans Serif', Arial, Helvetica, sans-serif;
+  font-family: System, monospace;
+  font-style: bold;
   background-color: #008080; /* Teal background, common in Windows 95 */
   color: black;
 }
 
-.poolsdialog a .top-menu-bar .icon-container, .top-menu-bar a, footer a {
-    margin: 0 1em;
-    text-decoration: none;
-    color: #000;
-    padding: 0 1em;
-}
+.header {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: start; /* Aligns items to the start of the container */
+    padding: 10px; /* Adds some padding around the items */
+  }
+  
+  .header img {
+    width: 100px; /* Adjust based on your preference */
+    height: 100px; /* Adjust to maintain aspect ratio */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area */
+    margin-right: 20px; /* Adds spacing between the image and the text */
+  }
+  
+  .header-info {
+    display: flex;
+    flex-direction: column; /* Stacks the text items vertically */
+  }
 
 .top-menu-bar {
     top: 0;
@@ -29,15 +43,16 @@ body {
 
 /* Classic Windows 95 window */
 .window {
+    display: flex;
     position: relative;
     cursor: default;
     margin: 2em auto;
     width: 80%;
     background: silver;
-    color: #fff;
+    color: #181818;
     border: 6px double #fff;
     padding: 1em;
-  box-shadow: 0 0 0 3px #3465a4, 1em 1em 3px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 0 3px #909092, 1em 1em 3px 0 rgba(0,0,0,.5);
 }
 
 .window-titlebar {
