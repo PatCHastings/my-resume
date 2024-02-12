@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import TopBar from "./components/TopBar";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import Experience from "./components/Experience";
+import "./styles/retro.css";
 
 const myExperiences = [
   {
@@ -39,16 +41,32 @@ const myExperiences = [
 ];
 
 function App() {
+  const [visibleSection, setVisibleSection] = useState<string>("");
+
+  const handleSelectSection = (sectionId: string) => {
+    setVisibleSection(sectionId);
+  };
+
   return (
     <div className="App">
-      <Header
-        name="Patrick Hastings"
-        title="Software Engineer I"
-        email="phastings82@gmail.com"
-        phone="614-787-5568"
-      />
-      <AboutMe bio="Here is a brief introduction about myself. I am a passionate software engineer with a keen interest in building scalable web applications. In my free time, I enjoy contributing to open source projects and exploring new technologies." />
-      <Experience experiences={myExperiences} />
+      <TopBar onSelectSection={handleSelectSection} />
+      {visibleSection === "header" && (
+        <Header
+          name="Patrick Hastings"
+          title="Software Engineer"
+          email="phastings82@gmail.com"
+          phone="614-787-5568"
+        />
+      )}
+      {visibleSection === "aboutMe" && (
+        <AboutMe bio="Passionate about solving problems and creating value through technology, I blend 1.5+ years in Software Engineering with an 8-year foundation in mortgage banking. This journey has equipped me with a unique perspective on adapting to change, innovating under pressure, and understanding user needs." />
+      )}
+      {visibleSection === "experience" && (
+        <div className="window">
+          <Experience experiences={myExperiences} />
+        </div>
+      )}
+      {/* Include other sections with similar conditional rendering */}
     </div>
   );
 }

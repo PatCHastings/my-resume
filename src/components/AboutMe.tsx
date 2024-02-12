@@ -7,7 +7,7 @@ interface AboutMeProps {
 
 const AboutMe: React.FC<AboutMeProps> = ({ bio }) => {
   return (
-    <div className="about-me">
+    <div className="window">
       <h2>About Me</h2>
       <p>{bio}</p>
       {/* You can add more content here such as a list of interests or goals */}

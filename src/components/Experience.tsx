@@ -31,7 +31,7 @@ const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
       <h1>Experience</h1>
       {experiences.map((exp, index) => (
         <div key={index}>
-          <h2>{exp.title}</h2>
+          <h2 className="window-titlebar">{exp.title}</h2>
           <h3>{exp.company}</h3>
           <p>{exp.duration}</p>
           <ul>{renderDescription(exp.description)}</ul>

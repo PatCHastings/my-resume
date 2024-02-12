@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name, title, email, phone }) => {
   return (
-    <div>
+    <div className="window">
       <h1>{name}</h1>
       <h2>{title}</h2>
       <p>Email: {email}</p>
